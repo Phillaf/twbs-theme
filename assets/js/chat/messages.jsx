@@ -9,9 +9,9 @@ define(function(require) {
 
             var messages = this.props.messages.map(function (message){
                 return(
-                    <div className="message">
+                    <div className="message" key={message.id}>
                         <div className="pull-left">
-                            <img src="/TwbsTheme/img/avatar.jpg" className="img-circle message-avatar" alt="{name}"/>
+                            <img src="/TwbsTheme/img/avatar.jpg" className="img-circle message-avatar" alt={message.user.username}/>
                         </div>
                         <div>
                             <span className="pull-right">{new Date(message.created).toDateString()}</span>

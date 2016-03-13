@@ -12,7 +12,7 @@ define(function(require) {
         mixins: [CommunicationMixin],
 
         fetchUrl: "/api/threads/view",
-        sendUrl:  "/api/messages/add.json",
+        sendUrl:  "/api/messages/add",
         recieveUri: "messages.add",
 
         fetched: function(data) {
@@ -25,12 +25,15 @@ define(function(require) {
                 id: data['thread']['id'],
                 title: data['thread']['title'],
                 users: users,
-                messages: data['messages']
+                messages: data['messages'].reverse(),
             });
             $('#loading-messages').hide();
         },
 
         recieved: function(data) {
+            if (data.thread_id != this.state.id) {
+                return;
+            }
             this.state.messages.push(data);
             this.setState({messages: this.state.messages});
         },

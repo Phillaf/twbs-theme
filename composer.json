@@ -4,18 +4,21 @@
     "type": "cakephp-plugin",
     "homepage": "http://gintoniccms.com",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Philippe Lafrance",
+            "homepage": "http://phillafrance.com",
+            "role": "Author"
+        }
+    ],
     "require": {
-        "php": ">=5.4.16",
         "cakephp/cakephp": "~3.0",
         "gintonicweb/requirejs": "~0.1",
         "friendsofcake/bootstrap-ui": "~0.3",
         "gintonicweb/websockets": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.1",
-        "cakephp/cakephp-codesniffer": "dev-master"
-    },
-    "suggest": {
+        "phpunit/phpunit": "~4.1"
     },
     "autoload": {
         "psr-4": {
@@ -24,10 +27,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "TwbsTheme\\Test\\": "tests",
-            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+            "TwbsTheme\\Test\\": "tests"
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }

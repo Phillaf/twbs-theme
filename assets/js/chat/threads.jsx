@@ -20,7 +20,7 @@ define(function(require) {
                 var date = formatter.format(new Date(thread.modified)) + ' ' + new Date(thread.modified).getDay();
 
                 return(
-                    <div>
+                    <div key={thread.id}>
                         <hr/>
                         <a href={link}>
                         <div className="row">

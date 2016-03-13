@@ -11,7 +11,7 @@
         <div class="navbar-header">
             <?php echo $this->Html->link(
                 $this->Html->image(
-                    'logo.png',
+                    'TwbsTheme.logo.png',
                     [
                         "class" => "img-responsive navbar-img",
                         "alt" => 'GintonicCMS'
@@ -67,7 +67,7 @@
                             <li>
                                 <?= $this->Html->link(
                                     __('Administration'),
-                                    ['controller'=>'Users', 'action'=>'edit', 'prefix' => 'admin']
+                                    ['controller'=>'Users', 'action'=>'index', 'prefix' => 'admin']
                                 ) ?>
                             </li>
                             <li role="separator" class="divider"></li>
@@ -82,7 +82,12 @@
                         <li>
                             <?= $this->Html->link(
                                 __('Sign out'),
-                                ['plugin'=>'Users', 'controller'=>'Users', 'action'=>'signout']
+                                [
+                                    'plugin'=>'Users',
+                                    'controller'=>'Users',
+                                    'action'=>'signout',
+                                    'prefix' => false
+                                ]
                             ) ?>
                         </li>
                     </ul>
